@@ -4,18 +4,26 @@ using Microsoft.AspNetCore.Mvc;
 using FlavorSite.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace FlavorSite.Controllers
 {
+  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly FlavorSiteContext _db;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public FlavorsController(FlavorSiteContext db)
+    public FlavorsController(UserManager<ApplicationUser> userManager, FlavorSiteContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
 
+    [AllowAnonymous]
     public ActionResult Index()
     {
       return View(_db.Flavors.ToList());
@@ -40,6 +48,7 @@ namespace FlavorSite.Controllers
       return RedirectToAction("Index");
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       var thisFlavor = _db.Flavors
