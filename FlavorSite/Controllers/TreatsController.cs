@@ -5,9 +5,15 @@ using Microsoft.AspNetCore.Mvc;
 using FlavorSite.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using System.Security.Claims;
+
 
 namespace FlavorSite.Controllers
 {
+  [Authorize]
   public class TreatsController : Controller
   {
     private readonly FlavorSiteContext _db;
@@ -17,6 +23,7 @@ namespace FlavorSite.Controllers
       _db = db;
     }
 
+    [AllowAnonymous]
     public ActionResult Index()
     {
       List<Treat> model = _db.Treats.ToList();
