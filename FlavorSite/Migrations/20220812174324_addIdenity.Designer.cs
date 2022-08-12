@@ -3,14 +3,16 @@ using System;
 using FlavorSite.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FlavorSite.Migrations
 {
     [DbContext(typeof(FlavorSiteContext))]
-    partial class FlavorSiteContextModelSnapshot : ModelSnapshot
+    [Migration("20220812174324_addIdenity")]
+    partial class addIdenity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
