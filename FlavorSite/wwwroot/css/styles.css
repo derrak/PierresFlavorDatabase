@@ -1,12 +1,27 @@
-div#footer {
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	width: 100%;
-	color: #CCC;
-	background: #333;
-	padding: 8px;
+.navbar,.container-fluid{
+	background: rgb(228, 178, 193);
+	background: 
+	radial-gradient(
+		circle at bottom left,
+		 rgba(228, 178, 193, .8) 0%,
+		  rgba(204, 199, 216, .8) 50%,
+			 rgba(179, 199, 213, .8) 100%);
 }
+
+.card{
+	background: rgb(228, 178, 193);
+	background: 
+	radial-gradient(
+		circle at bottom left,
+		 rgba(228, 178, 193, .8) 0%,
+		  rgba(204, 199, 216, .8) 50%,
+			 rgba(179, 199, 213, .8) 100%);
+	border-color:  rgba(228, 178, 193, .4);
+}
+
+/* .card-body{
+	background: rgba(179, 199, 213, .1)
+} */
 
 html {
 	height: 100%;
