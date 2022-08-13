@@ -1,13 +1,27 @@
 div#footer {
-	position:fixed;
-	bottom:0px;
-	left:0px;
-	width:100%;
-	color:#CCC;
-	background:#333;
-	padding:8px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	color: #CCC;
+	background: #333;
+	padding: 8px;
 }
 
-body{
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
 	margin: 2em;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background: rgb(228, 178, 193);
+	background: radial-gradient(
+		circle at bottom right,
+		 rgba(228, 178, 193, 1) 0%,
+		  rgba(204, 199, 216, 1) 50%,
+			 rgba(179, 199, 213, 1) 100%);
+
 }
